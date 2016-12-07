@@ -5,6 +5,7 @@ class GithubService
   end
 
   def conn
+    require "pry"; binding.pry
     Faraday.new(:url => "https://api.github.com") do |f|
       f.params[:access_token] = @current_user.token
       f.adapter = Faraday.default_adapter

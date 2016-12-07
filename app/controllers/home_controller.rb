@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @repos = GithubService.repos
+    @repos = GithubUser.all_repos(@current_user)
   end
 end
