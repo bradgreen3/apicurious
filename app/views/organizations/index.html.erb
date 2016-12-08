@@ -1,6 +1,20 @@
-<% @organizations.each do |organization| %>
-<ul>
-  <li> <%= organization.name %> </li>
-  <li> <%= organization.description %> </li>
-</ul>
-<% end %>
+<div class='container'>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td><strong>Repository</strong></td>
+      <td><strong>Description</strong></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @organizations.each do |organization| %>
+  <tr>
+    <td> <%= organization.name %> </td>
+    <td> <%= organization.description %> </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+
+</div>

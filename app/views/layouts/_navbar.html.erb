@@ -1,6 +1,48 @@
 <% if current_user %>
-  hello, <%= current_user.username %>
-  <%= link_to "Logout", logout_path, method: :delete %>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img id="brand-image" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      </ul>
+      <form class="navbar-form navbar-left">
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+          role="button" aria-haspopup="true" aria-expanded="false"><img id="dropdown-image" src="<%= current_user.avatar_url %>"/><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/repos">Repositories</a></li>
+            <li><a href="/starred_repos">Starred</a></li>
+            <li><a href="/organizations">Organizations</a></li>
+            <li><a href="/commits">Recent Commits</a></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "Logout", logout_path, method: :delete %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <% else %>
-  <%= link_to "Login", github_login_path %>
+<div class="jumbotron vertical-center">
+  <div class="big">
+    <div class="container">
+      <h1 class="display-3">APIcurious</h1>
+      <p>You must log in to use this application!</p>
+    </div>
+    <button type="button" class="btn btn-default"><%= link_to "Login", github_login_path %></button>
+  </div>
+</div>
 <% end %>
