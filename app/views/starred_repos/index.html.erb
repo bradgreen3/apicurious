@@ -1,0 +1,7 @@
+<ul>
+<% @starred_repos.each do |repo| %>
+<li> <%= repo.full_name %> </li>
+<li> <%= repo.updated_at %> </li>
+<li> <%= repo.language %> </li>
+<% end %>
+</ul>

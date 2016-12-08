@@ -1,7 +1,18 @@
-<p> This is: home#index </p>
+<h3> Landing Page </h3>
 
-<ul>
-<% @repos.each do |repo| %>
-<li> <%= repo %> </li>
+<% if current_user %>
+
+<img src= "<%= current_user.avatar_url %>" height="42" width="42"> </img>
+<p> Followers: <%= current_user.followers %> </p>
+<p> Following: <%= current_user.following %> </p>
+
+<%= link_to "Repositories", repos_path %>
+<%= link_to "Starred Repos", starred_repos_path %>
+<%= link_to "Organizations", organizations_path %>
+<%= link_to "Recent Commits", commits_path %>
+
+<% @events.each do |event| %>
+<p> <%= event.login %> <%= event.type %> <%= event.name %> </p>
 <% end %>
-</ul>
+
+<% end %>

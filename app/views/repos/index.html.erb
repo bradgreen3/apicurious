@@ -1,0 +1,9 @@
+<% @repos.each do |repo| %>
+<ul>
+  <li> <strong> <%= repo.name %> </strong> </li>
+  <li> <%= repo.full_name %> </li>
+  <li> <%= repo.description %> </li>
+  <li> <%= repo.updated_at %> </li>
+  <li> <%= repo.language %> </li>
+</ul>
+<% end %>

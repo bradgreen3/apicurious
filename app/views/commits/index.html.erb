@@ -1,0 +1,3 @@
+<% @commits.each do |commit| %>
+  <p> <%= commit.type %> <%= commit.repo_name %> on <%= commit.created_at %> <p>
+<% end %>

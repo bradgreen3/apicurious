@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
+
   def index
-    @repos = GithubUser.all_repos(@current_user)
+    @events = GithubEvent.for_user(current_user.token, current_user.username)
   end
+
 end
