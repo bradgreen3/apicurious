@@ -1,9 +1,24 @@
-<% @repos.each do |repo| %>
-<ul>
-  <li> <strong> <%= repo.name %> </strong> </li>
-  <li> <%= repo.full_name %> </li>
-  <li> <%= repo.description %> </li>
-  <li> <%= repo.updated_at %> </li>
-  <li> <%= repo.language %> </li>
-</ul>
-<% end %>
+<div class='container'>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td><strong>Repository</strong></td>
+      <td><strong>Description</strong></td>
+      <td><strong>Updated</strong></td>
+      <td><strong>Language</strong></td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @repos.each do |repo| %>
+  <tr>
+    <td> <%= repo.name %> </td>
+    <td> <%= repo.description %> </td>
+    <td> <%= repo.updated_at %> </td>
+    <td> <%= repo.language %> </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+
+</div>

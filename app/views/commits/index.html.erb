@@ -1,3 +1,18 @@
-<% @commits.each do |commit| %>
-  <p> <%= commit.type %> <%= commit.repo_name %> on <%= commit.created_at %> <p>
-<% end %>
+<div class='container'>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td><strong>Commits</strong></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @commits.each do |commit| %>
+  <tr>
+    <td> <%= commit.type %> <%= commit.repo_name %> on <%= commit.created_at %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+
+</div>

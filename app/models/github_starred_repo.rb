@@ -3,7 +3,7 @@ class GithubStarredRepo
 
   def initialize(raw_repo={})
     @full_name = raw_repo[:full_name]
-    @updated_at = raw_repo[:updated_at]
+    @updated_at = clean_date(raw_repo[:updated_at])
     @language = raw_repo[:language]
   end
 
@@ -12,5 +12,10 @@ class GithubStarredRepo
     starred_repos.map do |raw_repo|
       GithubStarredRepo.new(raw_repo)
     end
+  end
+
+  def clean_date(raw_date)
+    d = DateTime.parse(raw_date)
+    d.strftime('%B %e, %Y at %H:%M')
   end
 end

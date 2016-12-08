@@ -1,18 +1,42 @@
-<h3> Landing Page </h3>
-
 <% if current_user %>
 
-<img src= "<%= current_user.avatar_url %>" height="42" width="42"> </img>
-<p> Followers: <%= current_user.followers %> </p>
-<p> Following: <%= current_user.following %> </p>
+<div class="jumbotron vertical-center">
+  <div class="container">
+    <h1 class="display-3">APIcurious</h1>
+    <p>This application authenticates a user via GitHub, makes calls to the GitHub API, and returns seleccted data</p>
+  </div>
+</div>
 
-<%= link_to "Repositories", repos_path %>
-<%= link_to "Starred Repos", starred_repos_path %>
-<%= link_to "Organizations", organizations_path %>
-<%= link_to "Recent Commits", commits_path %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-1">
 
-<% @events.each do |event| %>
-<p> <%= event.login %> <%= event.type %> <%= event.name %> </p>
-<% end %>
+  <table class="table">
+    <thead>
+    </thead>
+    <tbody>
+      <% @events.each do |event| %>
+      <tr>
+        <td><%= event.login %> <%= event.type %> <%= event.name %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
 
+  <div class="col-md-3 col-md-offset-1">
+
+  <table class="table table-hover">
+      <thead>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Followers: <%= current_user.followers %></td>
+        </tr>
+        <tr>
+          <td>Following: <%= current_user.following %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 <% end %>

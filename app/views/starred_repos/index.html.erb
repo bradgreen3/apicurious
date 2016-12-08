@@ -1,7 +1,22 @@
-<ul>
-<% @starred_repos.each do |repo| %>
-<li> <%= repo.full_name %> </li>
-<li> <%= repo.updated_at %> </li>
-<li> <%= repo.language %> </li>
-<% end %>
-</ul>
+<div class='container'>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td><strong>Repository</strong></td>
+      <td><strong>Updated</strong></td>
+      <td><strong>Language</strong></td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @starred_repos.each do |repo| %>
+  <tr>
+    <td> <%= repo.full_name %> </td>
+    <td> <%= repo.updated_at %> </td>
+    <td> <%= repo.language %> </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+
+</div>
