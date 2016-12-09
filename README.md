@@ -1,24 +1,25 @@
-# README
+### APIcurious
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+APIcurious consumes the GitHub API in order to recreate a simplified version
+of GitHub's website. Users are authenticated with GitHub using OAuth. Once
+authenticated, users can view their repositories, starred repositories,
+organizations they are affiliated with, recent commits, the number of users
+following them, the number of users they are following and recent activity of
+users they are following. Testing was completed using RSpec and Capybara.
 
-Things you may want to cover:
+### Version
 
-* Ruby version
+* Ruby: 2.3.0
+* Rails: 5.0.0.1
 
-* System dependencies
+### Setup
 
-* Configuration
+* git clone https://github.com/bradgreen3/apicurious.git
+* bundle
+* rake db:create db:migrate
+* rails s
+* visit localhost:3000
 
-* Database creation
+### Run Test Suite
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* rspec
