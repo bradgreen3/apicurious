@@ -41,14 +41,14 @@ RSpec.configure do |config|
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
       "provider" => 'github',
-      "uid" => '1234',
-      "credentials" => {"token" => '1234'},
+      "uid" => '17207274',
+      "credentials" => {"token" => ENV['github_user_token']},
       "extra" => {
         "raw_info" => {
-          "login" => 'fakeuser',
-          "avatar_url" => 'www.fakeurl.com',
-          "followers" => 4,
-          "following" => 3
+          "login" => 'bradgreen3',
+          "avatar_url" => 'https://avatars.githubusercontent.com/u/17207274?v=3',
+          "followers" => 2,
+          "following" => 2
         }
       }
     })
