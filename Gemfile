@@ -22,6 +22,7 @@ group :development, :test do
   gem 'rspec'
   gem 'capybara'
   gem 'launchy'
+  gem 'omniauth-github'
 end
 
 group :development do
