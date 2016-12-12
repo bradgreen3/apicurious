@@ -1,9 +1,13 @@
 <div class='container'>
 
+<% if @organizations.count == 0 %>
+  <p> No organizations! </p>
+<% else %>
+
 <table class="table">
   <thead>
     <tr>
-      <td><strong>Repository</strong></td>
+      <td><strong>Organization</strong></td>
       <td><strong>Description</strong></td>
     </tr>
   </thead>
@@ -16,5 +20,6 @@
   <% end %>
 </tbody>
 </table>
+<% end %>
 
 </div>
